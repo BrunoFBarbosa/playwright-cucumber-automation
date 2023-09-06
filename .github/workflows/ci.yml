@@ -1,0 +1,36 @@
+name: e2e-tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'corretto'
+    - name: Build with Maven
+      run: mvn clean install -DskipTests
+
+  e2e-tests:
+   needs: build
+   runs-on: ubuntu-latest
+   
+   steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'corretto'
+    - name: E2E Tests
+      run: mvn test -Dtest=com.automation.uat.features.login.LoginTest -DQA_ENVIRONMENT=qa
