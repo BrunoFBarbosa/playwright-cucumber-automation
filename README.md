@@ -18,7 +18,7 @@ git clone https://github.com/BrunoFBarbosa/playwright-cucumber-automation.git
 2. Navigate to the project's folder and install the dependencies
 ```
 cd playwright-cucumber-automation/
-mvn clean install
+mvn clean install -DskipTests
 ```
 
 ### Project's Structure
