@@ -18,7 +18,7 @@ jobs:
       with:
         java-version: '17'
         distribution: 'corretto'
-        cache: maven
+        cache: 'maven'
     - name: Build with Maven
       run: mvn clean install -DskipTests
 
@@ -33,5 +33,6 @@ jobs:
       with:
         java-version: '17'
         distribution: 'corretto'
+        cache: 'maven'
     - name: E2E Tests
       run: mvn test -Dtest=com.automation.uat.features.login.LoginTest -DQA_ENVIRONMENT=qa
