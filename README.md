@@ -1,5 +1,7 @@
 # About the Project
 
+[![e2e-tests](https://github.com/BrunoFBarbosa/playwright-cucumber-automation/actions/workflows/ci.yml/badge.svg)](https://github.com/BrunoFBarbosa/playwright-cucumber-automation/actions/workflows/ci.yml)
+
 Simple web automation framework using Playwright, Cucumber, JUnit and Page Object pattern in order to increase the knowledge of such tools. The application under test is https://www.saucedemo.com/
 
 ## Getting Started
